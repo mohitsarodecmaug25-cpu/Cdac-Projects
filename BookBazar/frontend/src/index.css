@@ -1,0 +1,642 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Amatic+SC:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Avenir:wght@300;400;500&display=swap');
+
+:root {
+  font-family: 'Poppins', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Amatic SC', cursive !important;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+p, span, div, label, .form-control, .btn, .navbar-brand, .nav-link, .navbar-nav {
+  font-family: 'Avenir', 'Poppins', sans-serif !important;
+  font-weight: 300;
+}
+
+.navbar-brand {
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 800 !important;
+  font-size: 1.8rem !important;
+  letter-spacing: -0.5px !important;
+}
+
+.navbar-nav .nav-link {
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 500 !important;
+  font-size: 0.95rem !important;
+  letter-spacing: 0.3px !important;
+}
+
+.navbar .btn {
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 0.85rem !important;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  color: white;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+/* Custom Ecommerce Styles */
+.book-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15) !important;
+}
+
+.book-image:hover {
+  transform: scale(1.05);
+}
+
+.product-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15) !important;
+}
+
+.product-image:hover {
+  transform: scale(1.1);
+}
+
+.product-card:hover .product-overlay {
+  opacity: 1 !important;
+}
+
+/* Navigation hover effects */
+.navbar-nav .nav-link:hover {
+  color: #667eea !important;
+  transform: translateY(-1px);
+  transition: all 0.2s ease;
+}
+
+/* Button hover effects */
+.btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-warning:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 193, 7, 0.4);
+}
+
+/* Card animations */
+.card {
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
+/* Hero section animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-content {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* Loading spinner */
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+}
+
+/* Fix text alignment compatibility */
+.text-match-parent {
+  text-align: -webkit-match-parent;
+  text-align: match-parent;
+}
+
+/* Print color adjustment */
+@media print {
+  * {
+    color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+
+/* Search input focus */
+.form-control:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+}
+
+/* Badge styles */
+.badge {
+  font-size: 0.75em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .display-4 {
+    font-size: 2rem;
+  }
+  
+  .lead {
+    font-size: 1rem;
+  }
+  
+  .btn-lg {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+  }
+}
+
+/* Theme Classes */
+.light-theme {
+  --bg-color: #f8f9fa;
+  --surface-color: #ffffff;
+  --text-color: #333333;
+  --border-color: #e0e0e0;
+}
+
+.dark-theme {
+  --bg-color: #2d2d2d;
+  --surface-color: #404040;
+  --text-color: #f5f5f5;
+  --border-color: #666666;
+  background-color: #2d2d2d !important;
+}
+
+.dark-theme body {
+  background-color: #2d2d2d !important;
+  color: #f5f5f5 !important;
+}
+
+.dark-theme .card {
+  background-color: #404040 !important;
+  border: 1px solid #666666 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+  color: #f5f5f5 !important;
+}
+
+.dark-theme .navbar {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+.dark-theme .nav-link svg,
+.dark-theme .btn svg {
+  filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.5));
+}
+
+.dark-theme .card-title,
+.dark-theme .card-text {
+  color: #f5f5f5 !important;
+}
+
+.dark-theme .btn {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3) !important;
+}
+
+.dark-theme * {
+  color: #f5f5f5 !important;
+}
+
+.dark-theme .text-dark,
+.dark-theme .text-black,
+.dark-theme [style*="color: #000"],
+.dark-theme [style*="color: black"],
+.dark-theme [style*="color:#000"],
+.dark-theme [style*="color:black"] {
+  color: #f5f5f5 !important;
+}
+
+.dark-theme .form-control,
+.dark-theme .form-select,
+.dark-theme input,
+.dark-theme textarea {
+  background-color: #404040 !important;
+  border-color: #666666 !important;
+  color: #f5f5f5 !important;
+}
+
+.dark-theme .form-control::placeholder {
+  color: #cccccc !important;
+}
+
+.dark-theme .card *,
+.dark-theme .card-body *,
+.dark-theme .card-header *,
+.dark-theme .card-footer *,
+.dark-theme .card h1,
+.dark-theme .card h2,
+.dark-theme .card h3,
+.dark-theme .card h4,
+.dark-theme .card h5,
+.dark-theme .card h6,
+.dark-theme .card p,
+.dark-theme .card span,
+.dark-theme .card div,
+.dark-theme .card small,
+.dark-theme .card strong,
+.dark-theme .card em,
+.dark-theme .card label,
+.dark-theme .card a {
+  color: #f5f5f5 !important;
+}
+
+.dark-theme .text-muted {
+  color: #cccccc !important;
+}
+
+.dark-theme .text-secondary {
+  color: #cccccc !important;
+}
+
+.dark-theme .badge {
+  background-color: #666666 !important;
+  color: #f5f5f5 !important;
+}
+
+.dark-theme,
+.dark-theme *:not(.btn-primary):not(.btn-success):not(.btn-danger):not(.btn-warning):not(.btn-info) {
+  color: #ffffff !important;
+}
+
+.dark-theme .btn {
+  color: #ffffff !important;
+}
+
+.dark-theme body,
+.dark-theme .container,
+.dark-theme .row,
+.dark-theme .col,
+.dark-theme .d-flex,
+.dark-theme .text-center,
+.dark-theme .text-left,
+.dark-theme .text-right {
+  color: #ffffff !important;
+}
+
+.dark-theme .book-card,
+.dark-theme .book-card *,
+.dark-theme .product-card,
+.dark-theme .product-card * {
+  color: #ffffff !important;
+}
+
+.dark-theme .book-card .card-title,
+.dark-theme .book-card .card-text,
+.dark-theme .product-card .card-title,
+.dark-theme .product-card .card-text {
+  color: #ffffff !important;
+}
+
+.dark-theme svg,
+.dark-theme .fa,
+.dark-theme .fas,
+.dark-theme .far,
+.dark-theme .fab,
+.dark-theme i {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+}
+
+.dark-theme .card .fw-bold,
+.dark-theme .card .text-success,
+.dark-theme .card .text-warning,
+.dark-theme .card .text-info,
+.dark-theme .card .text-primary,
+.dark-theme .card .price,
+.dark-theme .card .author,
+.dark-theme .card .rating,
+.dark-theme .card .btn-outline-primary,
+.dark-theme .card .btn-outline-secondary,
+.dark-theme .card .btn-outline-info {
+  color: #ffffff !important;
+}
+
+.dark-theme .btn-outline-primary,
+.dark-theme .btn-outline-secondary,
+.dark-theme .btn-outline-info,
+.dark-theme .btn-outline-warning {
+  color: #ffffff !important;
+  border-color: #ffffff !important;
+}
+
+/* FINAL FIX: Force ALL black text to white in dark theme */
+.dark-theme,
+.dark-theme *,
+.dark-theme *:before,
+.dark-theme *:after {
+  color: #ffffff !important;
+}
+
+.dark-theme [style*="color: #000"],
+.dark-theme [style*="color:#000"],
+.dark-theme [style*="color: black"],
+.dark-theme [style*="color:black"],
+.dark-theme [style*="color: rgb(0"],
+.dark-theme [style*="color:rgb(0"] {
+  color: #ffffff !important;
+}
+
+/* ULTIMATE FIX: Override ALL possible black text */
+body.dark-theme *,
+body.dark-theme *:not(svg),
+body.dark-theme .card *,
+body.dark-theme .btn *,
+body.dark-theme h1, body.dark-theme h2, body.dark-theme h3, body.dark-theme h4, body.dark-theme h5, body.dark-theme h6,
+body.dark-theme p, body.dark-theme span, body.dark-theme div, body.dark-theme small, body.dark-theme strong {
+  color: #ffffff !important;
+}
+
+/* Override Bootstrap and inline styles */
+body.dark-theme [class*="text-"],
+body.dark-theme .text-dark,
+body.dark-theme .text-black,
+body.dark-theme .text-body {
+  color: #ffffff !important;
+}
+
+/* NUCLEAR OPTION: Override everything with maximum specificity */
+html body.dark-theme * {
+  color: #ffffff !important;
+}
+
+html body.dark-theme *[style] {
+  color: #ffffff !important;
+}
+
+html body.dark-theme *[style*="color"] {
+  color: #ffffff !important;
+}
+
+/* Target specific inline styles */
+html body.dark-theme *[style*="color: #000000"],
+html body.dark-theme *[style*="color:#000000"],
+html body.dark-theme *[style*="color: black"],
+html body.dark-theme *[style*="color:black"],
+html body.dark-theme *[style*="color: #000"],
+html body.dark-theme *[style*="color:#000"] {
+  color: #ffffff !important;
+}
+
+/* SPECIFIC HOME PAGE BOOK CARDS FIX */
+html body.dark-theme .book-card .card-title,
+html body.dark-theme .book-card .card-body .fw-bold,
+html body.dark-theme .book-card .text-muted,
+html body.dark-theme .book-card .small,
+html body.dark-theme .book-card .fs-5,
+html body.dark-theme .book-card p,
+html body.dark-theme .book-card span,
+html body.dark-theme .book-card .btn {
+  color: #ffffff !important;
+}
+
+/* Override any inline styles on book cards */
+html body.dark-theme .book-card [style*="color"] {
+  color: #ffffff !important;
+}
+
+/* Force all text in cards to white */
+html body.dark-theme .card * {
+  color: #ffffff !important;
+}
+
+/* TARGETED FIX - Override text elements only */
+.dark-theme h1, .dark-theme h2, .dark-theme h3, .dark-theme h4, .dark-theme h5, .dark-theme h6,
+.dark-theme p, .dark-theme span, .dark-theme div:not(.btn), .dark-theme small, .dark-theme strong,
+.dark-theme .card-title, .dark-theme .card-text, .dark-theme .text-muted {
+  color: #ffffff !important;
+}
+
+.dark-theme *::before,
+.dark-theme *::after {
+  color: #ffffff !important;
+}
+
+/* Override Bootstrap text utilities */
+.dark-theme .text-primary,
+.dark-theme .text-secondary,
+.dark-theme .text-success,
+.dark-theme .text-danger,
+.dark-theme .text-warning,
+.dark-theme .text-info,
+.dark-theme .text-light,
+.dark-theme .text-dark,
+.dark-theme .text-body,
+.dark-theme .text-muted {
+  color: #ffffff !important;
+}
+
+/* Override any possible inline styles */
+.dark-theme [style] {
+  color: #ffffff !important;
+}
+
+/* Ensure buttons remain functional */
+.dark-theme .btn {
+  pointer-events: auto !important;
+  cursor: pointer !important;
+}
+
+.dark-theme .btn:not(:disabled):not(.disabled) {
+  opacity: 1 !important;
+}
+
+.dark-theme .btn:hover {
+  opacity: 0.9 !important;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f4a261;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e76f51;
+}
+
+/* Feature cards */
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(102, 126, 234, 0.1) !important;
+}
+
+/* Category cards */
+.category-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1) !important;
+}
+
+.category-card:hover .rounded-circle {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+/* Bulk purchase radio cards */
+.cursor-pointer {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cursor-pointer:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(244, 162, 97, 0.2);
+}
+
+/* Dark theme specific styles */
+.dark-theme .book-card:hover {
+  box-shadow: 0 8px 25px rgba(245, 245, 220, 0.1) !important;
+}
+
+.dark-theme .feature-card:hover {
+  box-shadow: 0 15px 35px rgba(244, 162, 97, 0.1) !important;
+}
+
+.dark-theme .category-card:hover {
+  box-shadow: 0 10px 25px rgba(245, 245, 220, 0.1) !important;
+}
+
+/* Aesthetic warm colors for dark theme */
+.dark-theme {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+}
+
+/* Toast container theme support */
+.Toastify__toast--success {
+  background: linear-gradient(135deg, #f4a261 0%, #e76f51 100%) !important;
+  color: white !important;
+}
+
+.Toastify__toast--error {
+  background: linear-gradient(135deg, #e63946 0%, #d62828 100%) !important;
+  color: white !important;
+}
+
+.Toastify__toast--info {
+  background: linear-gradient(135deg, #2a9d8f 0%, #264653 100%) !important;
+  color: white !important;
+}
+
+.Toastify__toast--warning {
+  background: linear-gradient(135deg, #f77f00 0%, #fcbf49 100%) !important;
+  color: white !important;
+}
+
+.dark-theme .Toastify__toast {
+  background-color: #2d2d2d;
+  color: #f5f5f5;
+  border: 1px solid #f5f5dc;
+}
+
+.Toastify__close-button {
+  color: white !important;
+  opacity: 0.8;
+}
+
+.Toastify__close-button:hover {
+  opacity: 1;
+}
+
+.Toastify__progress-bar--success {
+  background: rgba(255, 255, 255, 0.7) !important;
+}
+
+.Toastify__progress-bar--error {
+  background: rgba(255, 255, 255, 0.7) !important;
+}
+
+.Toastify__progress-bar--info {
+  background: rgba(255, 255, 255, 0.7) !important;
+}
+
+.Toastify__progress-bar--warning {
+  background: rgba(255, 255, 255, 0.7) !important;
+}
