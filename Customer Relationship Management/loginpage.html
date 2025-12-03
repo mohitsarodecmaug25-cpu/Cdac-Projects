@@ -1,0 +1,111 @@
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitcount+Ink:wght@100..900&display=swap" rel="stylesheet">
+    <title>Login page</title>
+    <style>
+        *{
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        body {
+            background: linear-gradient(white, rgb(219, 74, 74));
+        }
+
+        #log-container {
+            background-color: white;
+            width: 500px;
+            height: 500px;
+            text-align: center;
+            margin: 130px auto;
+            padding-top: 10px;
+            border-radius: 20px 150px 20px;
+          
+        }
+
+        .input-container {
+            margin-top: 25px;
+        }
+
+        .input-field {
+            width: 70%;
+            height: 40px;
+            border-left-width: 0px;
+            border-right-width: 0px;
+            border-top-width: 0px;
+            color: #000000;
+            border-bottom-color: #1f29b8;
+            outline: 0px;
+        }
+
+        #login-button {
+            width: 80px;
+            height: 30px;
+            background-color: aqua;
+            color: white;
+            font-size: 20px;
+            border: 0px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: background 400ms;
+        }
+
+        #login-button:hover {
+            background-color: white;
+            color: yellowgreen;
+            border-width: 1px;
+            border-style: solid;
+            border-color: black;
+        }
+
+        #sign-up-link {
+            text-decoration: none;
+        }
+      
+               #background-video {
+   
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: cover; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    
+     background-color: rgba(0, 0, 0, 0.5); 
+            z-index: -1;
+       }
+    </style>
+</head>
+
+<body>
+    <form id="log-container">
+        <div align="center">
+            <div>
+                <h1 class="input-container"> Signup </h1>
+            </div>
+            <div class="input-container"> <input type="text" placeholder="Enter the name/email" class="input-field">
+            </div>
+            <div class="input-container"> <input type="text" placeholder="Enter the last name" class="input-field">
+            </div>
+            <div  class="input-container">
+                <input type="text" placeholder="Email" class="input-field">
+            </div>
+             <div  class="input-container">
+                <input type="password" placeholder="password" class="input-field">
+            </div>
+            <div class="input-container">
+                 <button id="login-button">Signup</button>
+            </div>
+    </form>
+    <p>Already have  an Account <a href="http://127.0.0.1:5500/loginASS2.html" id="sign-up-link">login here</a></p>
+    </div>
+     <video autoplay muted loop id="background-video">
+        <source src="https://cdn.pixabay.com/video/2022/06/14/120266-720504932_tiny.mp4" type="video/mp4">
+    </video>
+</body>
+
+
+</html>

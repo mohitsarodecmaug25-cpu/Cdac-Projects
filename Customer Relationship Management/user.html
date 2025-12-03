@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Login Page</title>
+    <style>
+        * {
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(white, rgb(219, 74, 74));
+        }
+
+        #log-container {
+            background-color: white;
+            width: 500px;
+            height: 450px;
+            text-align: center;
+            margin: 130px auto;
+            padding-top: 10px;
+            border-radius: 20px 150px 20px;
+        }
+
+        .input-container {
+            margin-top: 25px;
+        }
+
+        .input-field {
+            width: 70%;
+            height: 40px;
+            border: none;
+            border-bottom: 2px solid #1f29b8;
+            outline: none;
+        }
+
+        #login-button {
+            width: 80px;
+            height: 30px;
+            background-color: aqua;
+            color: black;
+            font-size: 20px;
+            border: 0px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: background 400ms;
+        }
+
+        #login-button:hover {
+            background-color: white;
+            color: rgb(0, 182, 103);
+            border: 1px solid black;
+        }
+
+        #background-video {
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: cover;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="log-container">
+        <h1>Login</h1>
+        <div class="input-container">
+            <input type="text" placeholder="Enter Username" id="username" class="input-field">
+        </div>
+
+        <div class="input-container">
+            <input type="password" placeholder="Enter Password" id="password" class="input-field">
+        </div>
+
+        <div class="input-container">
+            <button id="login-button" onclick="login(event)">Login</button>
+        </div>
+
+        <p>Don't have an account? <a href="http://127.0.0.1:5500/loginpage.html">Signup here</a></p>
+    </div>
+
+    <video autoplay muted loop id="background-video">
+        <source src="https://cdn.pixabay.com/video/2022/06/14/120266-720504932_tiny.mp4" type="video/mp4">
+    </video>
+
+    <script>
+        function login(e) {
+            e.preventDefault();
+
+            let user = document.getElementById("username").value;
+            let pass = document.getElementById("password").value;
+
+            if (user === "admin" && pass === "admin") {
+                localStorage.setItem("username", user); 
+                alert("Login Successful!");
+
+                window.location.href = "miniproject2.html";
+            } else {
+                alert("Invalid Login! Username & Password both are 'admin'");
+            }
+        }
+    </script>
+
+</body>
+</html>

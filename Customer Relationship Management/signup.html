@@ -1,0 +1,88 @@
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <form>
+
+        <input type="text" placeholder="Enter Name" id="name-field" onkeyup="validateName()">
+        <span id="name-error"></span>
+        <br><br>
+
+        <input type="text" placeholder="Enter Phone" id="phone-field">
+        <span id="phone-error"></span>
+        <br><br>
+
+        <input type="email" placeholder="Enter Email" id="email-field">
+        <br><br>
+
+        <input type="password" placeholder="Enter Password" id="password-field">
+        <span id="password-error"></span>
+        <br><br>
+
+        <input type="password" placeholder="Confirm Password" id="confirm-password-field">
+        <br><br>
+
+        <input type="button" value="Sign Up" onclick="onSubmit()">
+        <a href="login.html">Login</a>
+    </form>
+<h3 id="result"></h3>
+
+    <script>
+        function validateName(){
+            var name = document.getElementById("name-field").value;
+            if(name.length === 0){
+                document.getElementById("name-error").innerHTML = "Name is required";
+            }
+            else{
+               document.getElementById("name-error").innerHTML = ""; 
+            }
+        }
+        function validate(){
+            var name = document.getElementById("name-field").value;
+            var phone = document.getElementById("phone-field").value;
+            var password = document.getElementById("password-field").value;
+            var isValid = true;
+            var phoneRegex = /^\d{10}$/;
+            var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,12}$/;
+            if(name.length === 0){
+                document.getElementById("name-error").innerHTML = "Name is required";
+                isValid = false;
+            }
+            if(phone.length === 0){
+                document.getElementById("phone-error").innerHTML = "Phone is required";
+                isValid = false;
+            }
+            else if(!phoneRegex.test(phone)){
+                document.getElementById("phone-error").innerHTML = "Phone no. must be 10 digits long";
+                isValid = false;
+            }
+            if(password.length === 0){
+                document.getElementById("password-error").innerHTML = "Password is required";
+                isValid = false;
+            }
+            // else if(!passwordRegex.test(password)){
+            //     document.getElementById("password-error").innerHTML = "Password must be 8 to 12 char long, and at leats one upper case, lower case, and one digit is required";
+            //     isValid = false;
+            // }
+            return isValid;
+        }
+
+        function onSubmit(){
+            if(validate()){
+                var name = document.getElementById("name-field").value;
+                var phone = document.getElementById("phone-field").value;
+                var password = document.getElementById("password-field").value;
+                var email = document.getElementById("email-field").value;
+                localStorage.setItem("name",name);
+                localStorage.setItem("phone",phone);
+                localStorage.setItem("password",password);
+                localStorage.setItem("email",email);
+                document.getElementById("result").innerHTML = "Sign Up Successful";
+            }
+        }
+    </script>
+
+
+</body>
+</html>
